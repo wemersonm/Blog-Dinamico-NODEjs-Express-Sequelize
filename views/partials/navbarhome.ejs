@@ -1,0 +1,24 @@
+<nav class="navbar navbar-dark bg-primary navbar-expand-sm d-flex justify-content-between">
+    <a class="navbar-brand p-2" href="/">
+        <strong>BRAT</strong>DREAMER
+    </a>
+
+    <ul class="navbar-nav ">
+        <%categories.forEach(category =>{%>
+            <li class="nav-item ">
+                <a class="nav-link" href="/category/<%=category.slug%>" ><%=category.title%></a>
+            </li>
+        <%})%>
+    </ul>
+
+    
+    <ul class="navbar-nav navbar-text" style="padding-right: 20px;">
+            <li class="nav-item">
+                <a class="nav-link btn bg-success" href="admin/users/create" class="text-light">Login</a>
+            </li>
+      
+    </ul>
+    
+   
+</nav> 
+

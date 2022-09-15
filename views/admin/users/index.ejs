@@ -1,0 +1,52 @@
+<%- include('../../partials/header.ejs')%>
+<body>
+  <%- include ('../../partials/navbar.ejs')%>
+
+  <div class="container">
+    <hr />
+    <h2>Usuarios</h2>
+    
+    <hr />
+    <h2 class="text-center text-secondary">Lista de Artigos</h2><br>
+    <table class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Ações</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <%users.forEach(user =>{%>
+            <tr>
+                
+                <td><%=user.id%></td>
+                <td><%=user.email%></td>
+                
+                <td>
+                <a href="#"><button class=" btn btn-warning" disabled>Editar</button></a>
+                <form method="POST" action="/categories/delete" style="display:inline" onsubmit="ConfirmDel(event,this)">
+                    <button class="btn btn-danger" disabled>Deletar</button>
+                </form>
+                </td>
+
+            </tr>
+        <%})%>
+        </tbody>
+    </table>
+  </div>
+</body>
+
+<%- include('../../partials/footer.ejs')%>
+
+
+<script>
+     function ConfirmDel(event,form){
+        event.preventDefault();
+        const decision = confirm('Deseja realmente excluir?') 
+        if(decision){
+            form.submit();
+        }
+}
+</script>

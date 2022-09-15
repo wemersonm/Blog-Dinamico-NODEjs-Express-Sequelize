@@ -1,0 +1,40 @@
+<%- include('../partials/header.ejs')%>
+<body>
+  <%- include ('../partials/navbar.ejs')%>
+
+  <div class="container">
+    <div class="row mt-5">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Categorias</h4>
+              <p class="card-text">Cria,Deleta,Altera e Lista todas as categorias</p>
+              <a href="/admin/categories" class="btn btn-dark ">Ir para o painel de <span class="text-warning">Categorias</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Aritigos</h4>
+                <p class="card-text">Cria,Deleta,Altera e Lista todos os artigos</p>
+                <a href="/admin/articles" class="btn btn-dark">Ir para o painel de <span class="text-info">Artigos</span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-6 mt-3">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title">Users</h4>
+                <p class="card-text">Cria,<s>Deleta</s>,<s>Altera</s> e Lista todos os ADM's</p>
+                <a href="/admin/users" class="btn btn-dark">Ir para o painel de <span class="text-danger">usuarios ADM</span></a>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</body>
+
+<%- include('../partials/footer.ejs')%>
+
