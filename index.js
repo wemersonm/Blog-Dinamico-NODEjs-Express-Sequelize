@@ -19,7 +19,7 @@ connection.authenticate().then(()=>{
 
 app.set('view engine','ejs');
 
-const time = 12*1000;
+const time = 15*1000;
 app.use(session({
     secret:'fds',  //aumentar seg da sessao, +- o salt do bcrypt
     cookie:{maxAge:time}
