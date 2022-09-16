@@ -1,0 +1,22 @@
+Foi criado uma pasta para as rotas e tabela para cada funcionalidade:
+
+DATABASE - Arquivo database.js: Criação da database(bd)
+ARTIGOS - Arquivo User.Js : Criação da tabela usando Sequelize e exportando ele
+ARTIGOS - Arquivo UserControloler.Js : Configura as rotas e as operações CRUD
+ARTIGOS - Arquivo UserControloler.Js : Configura as rotas e as operações CRUD
+CATEGORIAS : '' ''  '' '' '' '' '' ''
+USERS: '' ''  ''  ''  '' 
+
+-----
+
+views => Fica as os arquivos com as views que vai ser renderizadas no navegador
+      => admin - funções somente de admins do app
+              => articles - edit,index(tabela de todos os artigo com ações),new(criar), page(paginação)
+              =>categories - edit,index(tabela de todos os categorias com ações),new(criar)
+              =>users - edit,index(tabela de todos os usuarios com ações),new(criar), login(view de login) e index(Ao logar ir para o painel adm)
+              
+      => Partials - Arquivos com funcoes do front par usar em diferentes paginas sem precisar ficar copiando em casa view,
+                    como navbars,footer,header
+
+      index - pagina inicial do app
+      article - show dos artigos 
