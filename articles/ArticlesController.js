@@ -115,9 +115,9 @@ router.get("/articles/page/:num", (req, res) => {
     order: [["id", "DESC"]], // ordem decrescente por id(o mais recente aprece)
     offset: offset,
   }).then((articles) => {// passa o obj artigos
-    let next;
+    let next;           //saber se tem uma proxima pag da paginação
 
-    if (offset + 4 >= articles.count) { //indice do artigo
+    if (offset + 4 >= articles.count) { //se a qtd de ofset > indice do artigo
       next = false;
     } else {
       next = true;
@@ -128,7 +128,7 @@ router.get("/articles/page/:num", (req, res) => {
       next: next,
       articles: articles,
     };
-    Category.findAll().then((categories) => { // mostra todos os artgos para 
+    Category.findAll().then((categories) => { // mostra todos os artgos para render de paginação
       res.render("admin/articles/page", {
         categories: categories,
         result: result,
