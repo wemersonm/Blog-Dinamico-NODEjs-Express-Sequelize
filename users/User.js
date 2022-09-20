@@ -12,6 +12,6 @@ const User = connection.define("users", {
     allowNull: false,
   },
 });
-
+// força criar tabela
 User.sync({force:false})
 module.exports = User;
