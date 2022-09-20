@@ -87,6 +87,7 @@ router.post("/categories/update", (req, res) => { // rota que aponta para a acti
       },
     }
   ).then(() => {
+    res.render('../views/success');
     res.redirect("/admin/categories");//retorna para pagina de categorias se tudo der certo
   });
 });
