@@ -87,8 +87,8 @@ router.post("/categories/update", (req, res) => { // rota que aponta para a acti
       },
     }
   ).then(() => {
-    res.render('../views/success');
-    res.redirect("/admin/categories");//retorna para pagina de categorias se tudo der certo
+    const success = true;
+    res.redirect("/admin/categories",success);//retorna para pagina de categorias se tudo der certo
   });
 });
 //exporta a rota

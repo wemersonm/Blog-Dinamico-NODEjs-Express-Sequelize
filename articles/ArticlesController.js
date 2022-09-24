@@ -10,6 +10,7 @@ router.get("/admin/articles",adminAuth, (req, res) => { // rota para exibir os a
   Article.findAll({ //busca todos os dados da tabela artigos
     include: [{ model: Category }], //join para pegar dados da tabela  de categorias
   }).then((articles) => { //passa os dados da tabela da view atraves da variavel articles armaz. um obj 
+   
     res.render("admin/articles/index", { articles: articles }); //renderiza um arquivo no diretorio passando o obj articles que tem os dados dos artigos(tabela)
   });
 });
@@ -34,7 +35,8 @@ router.post("/articles/save", (req, res) => { //rota para salvar os artigos via 
     body: body,
     categoryId: category,
   }).then(() => {
-    res.redirect("/admin/articles"); //apos setar redirecionar para lista de artigos
+   
+    res.render("/admin/articles",); //apos setar redirecionar para lista de artigos
   });
 });
 
