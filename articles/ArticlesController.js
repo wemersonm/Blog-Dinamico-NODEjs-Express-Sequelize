@@ -6,7 +6,7 @@ const slugify = require("slugify"); //importa o slugify
 const adminAuth = require('../middlewares/adminAuth') // middleware para autenticacao
 
 
-router.get("/admin/articles",adminAuth, (req, res) => { // rota para exibir os artigos
+router.get("/admin/articles", (req, res) => { // rota para exibir os artigos
   Article.findAll({ //busca todos os dados da tabela artigos
     include: [{ model: Category }], //join para pegar dados da tabela  de categorias
   }).then((articles) => { //passa os dados da tabela da view atraves da variavel articles armaz. um obj 
@@ -15,7 +15,7 @@ router.get("/admin/articles",adminAuth, (req, res) => { // rota para exibir os a
   });
 });
 
-router.get("/admin/articles/new",adminAuth, (req, res) => { // rota para criar as categorias
+router.get("/admin/articles/new", (req, res) => { // rota para criar as categorias
   Category.findAll().then((categories) => { // busca todos os dados da tabela categorias
     res.render("admin/articles/new", { categories: categories }); //renderiza os dados na view no diretorio passando os obj categorias
   });
@@ -35,7 +35,6 @@ router.post("/articles/save", (req, res) => { //rota para salvar os artigos via 
     body: body,
     categoryId: category,
   }).then(() => {
-   
     res.render("/admin/articles",); //apos setar redirecionar para lista de artigos
   });
 });
@@ -140,7 +139,7 @@ router.get("/articles/page/:num", (req, res) => {
 });
 
  //mostra todos os usuarios cadastrados
-router.get('/admin',adminAuth,(req,res)=>{
+router.get('/admin',(req,res)=>{
   res.render('admin/index')
 })
 module.exports = router;

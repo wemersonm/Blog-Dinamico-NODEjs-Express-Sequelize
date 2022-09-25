@@ -8,7 +8,7 @@ const slugify = require("slugify");
 const adminAuth = require('../middlewares/adminAuth') //middleware de autenticação
 
 
-router.get("/admin/categories/new", adminAuth,(req, res) => { // rota para criar categorias
+router.get("/admin/categories/new",(req, res) => { // rota para criar categorias
   res.render("admin/categories/new"); //renderiza a view de criação de categorias
 });
 
@@ -28,7 +28,7 @@ router.post("/categories/save", (req, res) => { //rota de post para salvar os da
   }
 });
 
-router.get("/admin/categories",adminAuth, (req, res) => { // listar categorias
+router.get("/admin/categories", (req, res) => { // listar categorias
   Category.findAll().then((categories) => { //pega todas as categorias
     res.render("admin/categories/index", { categories: categories }); // renderizar a view que mostra as categorias
   });
@@ -54,7 +54,7 @@ router.post("/categories/delete", (req, res) => { //rota para deletar onde o for
   }
 });
 
-router.get("/admin/categories/edit/:id", adminAuth,(req, res) => { //rota que renderiza a page de editar categoria(parecida com a de new)
+router.get("/admin/categories/edit/:id",(req, res) => { //rota que renderiza a page de editar categoria(parecida com a de new)
   // essa rota e ativada quanto clica no btn de edit nas acoes na listagem de categorias passando o id <%categories.id%> no href onde esta o :id
   const id = req.params.id;
 

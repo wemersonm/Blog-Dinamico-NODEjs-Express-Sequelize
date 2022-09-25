@@ -16,8 +16,11 @@ const Article = connection.define('articles',{ //cria a tabela articles
     }
 })
 
+
 //relacionamento
 Category.hasMany(Article); // UMA Categoria tem muitos artigos
 Article.belongsTo(Category); // UM Artigo pertence a uma categoria
+
+Article.sync({force:false}).then(()=>{});
 
 module.exports = Article;
