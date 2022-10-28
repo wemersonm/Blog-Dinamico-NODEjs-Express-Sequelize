@@ -1,6 +1,6 @@
 # Blog-Dinamico-NODEjs-Express-Sequelize
-Nodejs
-Express
-Sequelize
-EJS
-Bootstrap
+Nodejs<br>
+Express<br>
+Sequelize<br>
+EJS<br>
+Bootstrap<br>
